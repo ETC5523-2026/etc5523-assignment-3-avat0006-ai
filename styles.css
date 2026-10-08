@@ -24,3 +24,9 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #1F6F78;
 }
+
+/* Show more of the top of the head in the profile photo */
+img.about-image {
+  object-fit: cover;
+  object-position: center 20%;
+}
