@@ -30,3 +30,13 @@ img.about-image {
   object-fit: cover;
   object-position: center 20%;
 }
+
+/* Make category tags easier to read */
+.quarto-category {
+  color: #14505A !important;
+  border-color: #14505A !important;
+  background-color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.2em 0.6em;
+}
