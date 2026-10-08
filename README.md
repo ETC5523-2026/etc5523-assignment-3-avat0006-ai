@@ -1,6 +1,8 @@
 
 # ETC5523 Blog Assessment
 
-* This is a **template** for the ETC5523 Blog Assessment. 
-* The author of this blog is **Michael Lydeamore**.
-* The URL for this blog is [https://etc5523-2023.github.io/blog-template/](https://etc5523-2023.github.io/blog-template/)
+* This blog is written by **Amisha Vatsa** for the ETC5523 Communicating with Data assessment at Monash University.
+
+## Audience
+
+This blog post is written for hospital managers and health-service planners who decide how infection-prevention budgets are spent, and who have no training in epidemiology.
