@@ -45,6 +45,10 @@ The DALY intervals overlap widely, so the study does not show a clear difference
 
 Cases and burden are not the same thing. Pneumonia and bloodstream infections make up 28% of cases but 51% of DALYs, because they are more often fatal. Urinary tract infections show the reverse pattern, with 45% of cases but only 27% of DALYs.
 
+::: {.callout-tip appearance="simple"}
+**What this means for planners:** Reducing avoidable hospital admissions and improving infection control inside hospitals are both worth funding. The study cannot tell you which of the two would save more, so a decision should weigh both and test the choice locally.
+:::
+
 ```{r}
 #| label: fig-burden
 #| fig-cap: "Estimated DALYs per 100,000 people by infection type, Germany and the EU/EEA average, 2011–2012. Bars show median estimates and error bars show 95% uncertainty intervals. Germany shows the representative German sample. Values from Table 2 of Zacher et al. (2019)."
