@@ -40,3 +40,11 @@ img.about-image {
   font-weight: 600;
   padding: 0.2em 0.6em;
 }
+/* Make the post description readable on the blue title banner */
+.quarto-title-banner .description,
+.quarto-title-banner .quarto-title-description,
+.quarto-title-banner .quarto-title-meta-heading,
+.quarto-title-banner .quarto-title-description p {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}

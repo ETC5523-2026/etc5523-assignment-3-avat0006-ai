@@ -1,12 +1,17 @@
 ---
 title: "Hospital Infections and Population Burden: What Germany Shows"
 subtitle: "Why a country with few infections per hospital patient can still carry a high burden"
+description: "A 2019 study finds that Germany's hospital infection burden is higher than the European average, even though its hospitals report fewer infections per patient."
 author: "Amisha Vatsa"
 date: "2026-10-08"
 bibliography: references.bib
 execute:
   echo: false
 ---
+
+::: {.callout-note appearance="simple"}
+**Key takeaway:** Germany has fewer infections per hospital patient than the European average, yet its population-wide burden of hospital-acquired infections is higher. The main driver appears to be how many people are admitted to hospital, not how well hospitals control infection.
+:::
 
 ## The problem
 
