@@ -1,0 +1,85 @@
+---
+title: "Hospital Infections and Population Burden: What Germany Shows"
+subtitle: "Why a country with few infections per hospital patient can still carry a high burden"
+author: "Amisha Vatsa"
+date: "2026-10-08"
+categories: [health, analysis]
+bibliography: references.bib
+execute:
+  echo: false
+---
+
+## The problem
+
+Infections caught during hospital care add to illness, death and cost, and many of them can be prevented. Prevention budgets are limited, so planners need to know which infections cause the most harm and how that harm compares with other diseases.
+
+Counting cases alone does not answer that question. A common infection that rarely kills may do less harm than a rarer one that often does. Disability-adjusted life years (DALYs) address this by combining time lost to early death with time lived with disability. One DALY is one year of healthy life lost.
+
+This post looks at a 2019 study that estimated the burden of five hospital-acquired infections in Germany using DALYs [@zacher2019]. Germany records fewer infections per hospital patient than the European average, so you might expect a lower burden. The study found that the picture is more complicated.
+
+## Where the evidence comes from
+
+The estimates come from a point prevalence survey run by the European Centre for Disease Prevention and Control in acute-care hospitals in 2011 and 2012 [@zacher2019]. A point prevalence survey is a snapshot: on one day, the hospital records which patients have an infection.
+
+The study used three samples. The main German sample covers 46 hospitals and 9,626 patients, chosen to represent German hospitals by size. A larger German sample of 132 hospitals and 41,539 patients was not selected to represent the country, so it is used here only as a check. The European comparison uses 273,753 patients from 1,149 hospitals across 29 EU/EEA countries and Croatia.
+
+The researchers converted each snapshot into an annual estimate using a simulation that ran 1,000 times. Each result is reported as a median with a 95% uncertainty interval, which is the range the simulations consistently produced. The method is released as an open-source R package, so others can check or reuse it. The five infection types are pneumonia, urinary tract infection, bloodstream infection, surgical site infection and *C. difficile* infection.
+
+## What the analysis found
+
+[@tbl-overall] summarises the national estimates. Germany's median burden is 308.2 DALYs per 100,000 people, compared with 290.0 for the EU/EEA average.
+
+| Measure             | Germany             | EU/EEA average      |
+|---------------------|---------------------|---------------------|
+| New infections      | 592.1 (521.7–665.8) | 467.9 (456.2–480.2) |
+| Attributable deaths | 20.1 (13.4–28.2)    | 15.3 (10.2–21.2)    |
+| DALYs               | 308.2 (221.2–416.3) | 290.0 (214.9–376.9) |
+
+: Estimated annual burden of five healthcare-associated infections per 100,000 people, Germany and the EU/EEA average, 2011–2012. Values are medians with 95% uncertainty intervals in brackets. {#tbl-overall}
+
+The intervals for DALYs overlap widely, so the study does not show a clear difference in total burden on this measure alone. The gap in new infections is clearer, since the two ranges barely overlap. Germany's hospitals have a lower infection rate among patients, yet the population-wide rate of new infections is higher. The difference comes from how many people are treated in hospital.
+
+Cases and burden are not the same thing. Pneumonia and bloodstream infections make up 28% of cases but 51% of DALYs, because they are more often fatal. Urinary tract infections show the reverse pattern, with 45% of cases but 27% of DALYs.
+
+```{r}
+#| label: fig-burden
+#| fig-cap: "Estimated DALYs per 100,000 people by infection type, Germany and the EU/EEA average, 2011–2012. Bars show median estimates and error bars show 95% uncertainty intervals. Values from Table 2 of Zacher et al. (2019)."
+#| message: false
+#| fig-width: 8
+#| fig-height: 4.5
+library(ggplot2)
+
+burden <- data.frame(
+  infection = rep(c("Pneumonia", "Urinary tract", "Bloodstream",
+                    "Surgical site", "C. difficile"), times = 2),
+  group     = rep(c("Germany", "EU/EEA average"), each = 5),
+  dalys     = c(86.1, 82.6, 72.2, 35.7, 25.9,
+                109.8, 57.1, 76.2, 35.1, 10.0),
+  lower     = c(42.1, 34.5, 38.3, 28.9, 2.5,
+                55.3, 24.3, 52.6, 33.3, 0.9),
+  upper     = c(145.1, 159.2, 129.0, 43.7, 61.2,
+                170.5, 102.9, 104.8, 36.8, 19.2)
+)
+burden$infection <- factor(burden$infection, levels = unique(burden$infection))
+
+ggplot(burden, aes(x = infection, y = dalys, fill = group)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +
+  geom_errorbar(aes(ymin = lower, ymax = upper),
+                position = position_dodge(width = 0.8),
+                width = 0.2, colour = "grey30") +
+  scale_fill_manual(values = c("EU/EEA average" = "grey70",
+                               "Germany" = "#2E5F8A")) +
+  labs(x = NULL, y = "DALYs per 100,000 people", fill = NULL) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+[@fig-burden] breaks the burden down by infection type. Germany's median is higher for urinary tract infection (82.6 compared with 57.1) and *C. difficile* infection (25.9 compared with 10.0). It is lower for pneumonia (86.1 compared with 109.8). Bloodstream and surgical site infections are close to the European figures. The error bars are wide for almost every type, especially *C. difficile*, so the ranking between countries should be read with caution.
+
+The authors' main explanation is not poor hygiene. Hospital-level infection rates in Germany are lower than the European average. Instead, Germany admits a large share of its population to hospital. A lower risk per patient, applied across many more patients, produces a higher burden for the whole population. The authors suggest that Germany's large number of hospital beds is a probable contributing factor, while noting that this needs further study.
+
+## Conclusion
+
+For someone planning prevention spending, this study changes the question. A country can have good hospital hygiene and still carry a high infection burden if many people are admitted. Prevention therefore has two levers: infection control inside hospitals, particularly for urinary tract infections, and reducing avoidable hospital stays. The study supports both, but it does not show that one matters more than the other.
+
+Three limits matter when using these numbers. First, they come from snapshot surveys, and the larger convenience sample gave higher estimates, which signals real uncertainty. Second, the severity figures are based on European data rather than German data. Third, each infection is treated as independent, which is a simplification. The full analysis, including its limitations, is in Zacher et al. [@zacher2019].
