@@ -2,3 +2,25 @@
 .navbar-dark, .quarto-title-banner {
   background-color: #006DAE;
 }
+/* Custom theming: readable background and clear headings */
+body {
+  background-color: #FAF8F5;
+  color: #2B2B2B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #14505A;
+  font-weight: 600;
+}
+
+/* Keep title banner text white so it stays readable on the blue banner */
+.quarto-title-banner h1,
+.quarto-title-banner h2,
+.quarto-title-banner h3,
+.quarto-title-banner p {
+  color: #FFFFFF;
+}
+
+a {
+  color: #1F6F78;
+}
