@@ -2,3 +2,49 @@
 .navbar-dark, .quarto-title-banner {
   background-color: #006DAE;
 }
+/* Custom theming: readable background and clear headings */
+body {
+  background-color: #FAF8F5;
+  color: #2B2B2B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #14505A;
+  font-weight: 600;
+}
+
+/* Keep title banner text white so it stays readable on the blue banner */
+.quarto-title-banner h1,
+.quarto-title-banner h2,
+.quarto-title-banner h3,
+.quarto-title-banner p {
+  color: #FFFFFF;
+}
+
+a {
+  color: #1F6F78;
+}
+
+/* Show more of the top of the head in the profile photo */
+img.about-image {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* Make category tags easier to read */
+.quarto-category {
+  color: #14505A !important;
+  border-color: #14505A !important;
+  background-color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.2em 0.6em;
+}
+/* Make the post description readable on the blue title banner */
+.quarto-title-banner .description,
+.quarto-title-banner .quarto-title-description,
+.quarto-title-banner .quarto-title-meta-heading,
+.quarto-title-banner .quarto-title-description p {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
