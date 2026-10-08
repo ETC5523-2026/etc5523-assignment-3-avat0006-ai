@@ -23,11 +23,11 @@ This post looks at a 2019 study that estimated the burden of five HAI types in G
 
 ## Where the evidence comes from
 
-The estimates come from a point prevalence survey run by the European Centre for Disease Prevention and Control in acute-care hospitals in 2011 and 2012 [@zacher2019]. Each survey records infected patients on a single day across participating hospitals.
+The figures come from a point prevalence survey of healthcare-associated infections and antimicrobial use. The European Centre for Disease Prevention and Control ran it in acute-care hospitals during 2011 and 2012 [@zacher2019]. Participating hospitals recorded which patients had an infection on a single day, so the survey is a snapshot rather than a count of every case over the year.
 
-The study used three samples. The main German sample covers 46 hospitals and 9,626 patients, chosen to represent German hospitals by size. A larger sample of 132 hospitals was not selected to represent the country, so the authors use it to test how sensitive the results are. The European comparison uses 273,753 patients from 1,149 hospitals across 29 EU/EEA countries and Croatia.
+Three sets of hospital data were used. The core German sample contains 46 hospitals and 9,626 patients, selected at random with hospital size taken into account so that it reflects German hospitals as a whole. A second, larger German sample of 132 hospitals was not selected to be representative, and the authors use it mainly to show how much the results depend on which hospitals were included. For comparison, the European data cover 273,753 patients from 1,149 hospitals in 29 EU/EEA countries and Croatia.
 
-The researchers converted each snapshot into an annual estimate using a simulation that ran 1,000 times. Each result is reported as a median with a 95% uncertainty interval, which spans the 2.5th to 97.5th percentiles of the simulated results. The authors also released their method as an open-source R package, so others can check and reuse it. The five infection types are pneumonia, urinary tract infection, bloodstream infection, surgical site infection and *C. difficile* infection.
+To turn these snapshots into yearly estimates, the researchers ran a simulation 1,000 times. Each reported figure is a median, and its 95% uncertainty interval runs from the 2.5th to the 97.5th percentile of the simulated results. The method was released as an open-source R package, so other analysts can check the calculations and reuse them. The study covers five infection types: pneumonia, urinary tract infection, bloodstream infection, surgical site infection and *C. difficile* infection.
 
 ## What the analysis found
 
