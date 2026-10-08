@@ -3,7 +3,6 @@ title: "Hospital Infections and Population Burden: What Germany Shows"
 subtitle: "Why a country with few infections per hospital patient can still carry a high burden"
 author: "Amisha Vatsa"
 date: "2026-10-08"
-categories: [health, analysis]
 bibliography: references.bib
 execute:
   echo: false
