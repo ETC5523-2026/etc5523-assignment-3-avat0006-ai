@@ -10,7 +10,7 @@ execute:
 ---
 
 ::: {.callout-note appearance="simple"}
-**Key takeaway:** Germany has fewer infections per hospital patient than the European average, yet its population-wide burden of hospital-acquired infections is higher. The main driver appears to be how many people are admitted to hospital, not how well hospitals control infection.
+**Key takeaway:** Germany has fewer infections per hospital patient than the European average, yet its population-wide burden of hospital-acquired infections is higher. The main driver appears to be how many people are admitted to hospital, not mainly how well hospitals control infection.
 :::
 
 ::: {.panel-tabset}
@@ -92,10 +92,10 @@ The authors do not attribute Germany's higher figure to poor hygiene. Hospital-l
 
 ### Conclusion
 
-This answers the question raised at the start: a low infection rate per hospital patient does not mean a low burden for the population. Germany's median burden was 308.2 DALYs per 100,000 people, compared with 290.0 for the EU/EEA, although the uncertainty intervals overlap widely. The main driver appears to be how many people are admitted to hospital, not how well hospitals control infection.
+This answers the question raised at the start: a low infection rate per hospital patient does not mean a low burden for the population. Germany's median burden was 308.2 DALYs per 100,000 people, compared with 290.0 for the EU/EEA, although the uncertainty intervals overlap widely. The main driver appears to be how many people are admitted to hospital, not mainly how well hospitals control infection.
 
 For someone planning prevention spending, this changes the question. A country can have good hospital hygiene and still carry a high infection burden if admission rates are high. Prevention could therefore focus on two areas: infection control inside hospitals, for example on urinary tract infections, which make up a large share of cases, and reducing avoidable hospital stays. The study supports both, but it does not show that one matters more than the other.
 
-Three limits matter for decisions. First, the figures come from a single-day snapshot in each hospital, and the larger sample gave higher estimates, so treat the national figure as a rough guide and plan for a range rather than a single number. Second, the severity categories used to estimate remaining life expectancy come from European patients. German patients may be less severely ill than the European average, so the DALY figures for Germany are more likely to be underestimated than overestimated. Third, each infection is counted separately, so a patient with two infections is counted twice, which slightly overstates the burden. The full analysis is in Zacher et al. [@zacher2019].
+Three limits matter for decisions. First, the figures come from a single-day snapshot in each hospital, and the larger sample gave higher estimates, so treat the national figure as a rough guide and plan for a range rather than a single number. Second, the severity categories used to estimate remaining life expectancy come from European patients. German patients may be less severely ill than the European average, so the DALY figures for Germany are more likely to be underestimated than overestimated. Third, each infection is counted separately, so a patient with two infections is counted twice, which likely slightly overstates the burden. The full analysis is in Zacher et al. [@zacher2019].
 
 :::
