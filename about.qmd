@@ -5,9 +5,14 @@ about:
   template: jolla
   links:
     - icon: github
-      text: Github
-      href: https://github.com/etc5523-2022
+      text: GitHub
+      href: https://github.com/avat0006-ai
+    - icon: linkedin
+      text: LinkedIn
+      href: www.linkedin.com/in/amisha-vatsa-973670214
 
 ---
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+I'm Amisha Vatsa, a Master of Business Analytics student at Monash University in Melbourne. I come from a biotechnology background, with a B.Tech (Honours) from VIT Vellore, and I'm now focused on working with data to support better decisions.
+
+My technical skills include R, Python, SQL, Quarto, and Excel. I've co-authored two academic publications, which has helped me practise explaining complex work to different audiences.
