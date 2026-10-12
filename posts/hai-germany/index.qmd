@@ -13,7 +13,9 @@ execute:
 **Key takeaway:** Germany has fewer infections per hospital patient than the European average, yet its population-wide burden of hospital-acquired infections is higher. The main driver appears to be how many people are admitted to hospital, not how well hospitals control infection.
 :::
 
-## The problem
+::: {.panel-tabset}
+
+### Problem
 
 Infections caught during hospital care add to illness, death and cost, and many of them can be prevented. Healthcare-associated infections (HAIs) place a heavy load on health systems, and prevention budgets are limited. Planners therefore need to know which infections cause the most harm, and how that harm compares with other diseases.
 
@@ -21,7 +23,9 @@ Counting cases alone does not answer that question. A common infection that rare
 
 This post looks at a 2019 study that estimated the burden of five HAI types in Germany using DALYs [@zacher2019]. Germany records fewer infections per hospital patient than the European average, so you might expect a lower burden. The study found that the picture is more complicated.
 
-## Where the evidence comes from
+### Analysis
+
+#### Where the evidence comes from
 
 The figures come from a point prevalence survey of healthcare-associated infections and antimicrobial use. The European Centre for Disease Prevention and Control ran it in acute-care hospitals during 2011 and 2012 [@zacher2019]. Participating hospitals recorded which patients had an infection on a single day, so the survey is a snapshot rather than a count of every case over the year.
 
@@ -29,7 +33,7 @@ Three sets of hospital data were used. The core German sample contains 46 hospit
 
 To turn these snapshots into yearly estimates, the researchers ran a simulation 1,000 times. Each reported figure is a median, and its 95% uncertainty interval runs from the 2.5th to the 97.5th percentile of the simulated results. The method was released as an open-source R package, so other analysts can check the calculations and reuse them. The study covers five infection types: pneumonia, urinary tract infection, bloodstream infection, surgical site infection and *C. difficile* infection.
 
-## What the analysis found
+#### What the analysis found
 
 @tbl-overall summarises the national estimates. Germany's median burden is 308.2 DALYs per 100,000 people, compared with 290.0 for the EU/EEA average.
 
@@ -41,7 +45,7 @@ To turn these snapshots into yearly estimates, the researchers ran a simulation 
 
 : Estimated annual burden of five healthcare-associated infections (HAIs) per 100,000 people, Germany and the EU/EEA average, 2011–2012. Values are medians with 95% uncertainty intervals in brackets. {#tbl-overall}
 
-The DALY intervals overlap widely, so the study does not show a clear difference in total burden on this measure alone. The gap in new infections is clearer, because Germany's interval does not overlap the EU/EEA interval at all. Germany's hospitals have a lower infection rate among patients, yet the population-wide rate of new infections is higher. The difference comes from how many people are treated in hospital.
+The DALY intervals overlap widely, so the study does not show a clear difference in total burden on this measure alone. The gap in new infections is clearer, because Germany's interval does not overlap the EU/EEA interval at all. Germany's hospitals have a lower infection rate among patients, yet the population-wide rate of new infections is higher. The gap is largely explained by how many people are treated in hospital.
 
 Cases and burden are not the same thing. Pneumonia and bloodstream infections make up 28% of cases but 51% of DALYs, because they are more often fatal. Urinary tract infections show the reverse pattern, with 45% of cases but only 27% of DALYs. This is why case counts alone cannot show which infections cause the most harm.
 
@@ -86,7 +90,7 @@ ggplot(burden, aes(x = infection, y = dalys, fill = group)) +
 
 The authors do not attribute Germany's higher figure to poor hygiene. Hospital-level infection rates in Germany are lower than the European average, and the authors suggest that good hygiene may partly explain this. The higher population figure instead comes from admissions. Germany admits a large share of its population to hospital, so a lower risk per patient, applied across many more patients, produces a higher burden for the whole population. The authors suggest that Germany's large number of hospital beds is a probable contributing factor, while noting that this needs further study.
 
-## Conclusion
+### Conclusion
 
 This answers the question raised at the start: a low infection rate per hospital patient does not mean a low burden for the population. Germany's median burden was 308.2 DALYs per 100,000 people, compared with 290.0 for the EU/EEA, although the uncertainty intervals overlap widely. The main driver appears to be how many people are admitted to hospital, not how well hospitals control infection.
 
@@ -94,3 +98,4 @@ For someone planning prevention spending, this changes the question. A country c
 
 Three limits matter for decisions. First, the figures come from a single-day snapshot in each hospital, and the larger sample gave higher estimates, so treat the national figure as a rough guide and plan for a range rather than a single number. Second, the severity categories used to estimate remaining life expectancy come from European patients. German patients may be less severely ill than the European average, so the DALY figures for Germany are more likely to be underestimated than overestimated. Third, each infection is counted separately, so a patient with two infections is counted twice, which slightly overstates the burden. The full analysis is in Zacher et al. [@zacher2019].
 
+:::
